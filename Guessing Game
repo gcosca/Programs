@@ -1,0 +1,38 @@
+import java.util.Random;
+import java.util.Scanner;
+/**
+ * Write a description of class Game here.
+ * 
+ * @author (Gilberto Cosca) 
+ * @version (11/09/17)
+ */
+public class Game
+{
+    Random random;
+    Scanner scanner;
+    int myNum, yourNum;
+    public Game()
+    {
+       random = new Random();
+       myNum = 1 + random.nextInt(10); 
+       scanner = new Scanner(System.in);
+       System.out.println("I'm thinking of a number between 1 and 10...");
+       System.out.println("Can you guess what it is?");
+       System.out.print("Guess a Number:");
+       yourNum = scanner.nextInt();
+       System.out.println("You guessed:" + yourNum);
+       System.out.println("The number I was thinking about was " + " " + myNum);
+       if (myNum==yourNum) {
+           System.out.println("YOU WIN !!!!");
+        }
+       else {
+           System.out.println("YOU LOSE! BWAHAHAHAHAHHAHA");
+           System.out.println("You were off by" + " " + java.lang.Math.abs(yourNum-myNum));
+           System.out.println("Maybe better luck next time");
+        }
+            
+    }
+    public Random getMyNumber() {
+        return random;
+}
+}
