@@ -1,0 +1,37 @@
+import java.util.*;
+/**
+ * Write a description of class Converter here.
+ * Converts seconds into hours, minutes, and seconds
+ * @author (Gilberto Cosca Jr.)
+ * @version (11/11/17)
+ */
+
+public class Converter
+{
+    //Tell user about program then ask for seconds to be converted
+    public Converter() {
+    int seconds, hour, minute, remainder1,remainder2;
+    final int SECONDS_PER_MINUTE = 60;
+    final int MINUTE_PER_HOUR = 60;
+    Scanner in = new Scanner(System.in);
+    
+        // initialise instance variables
+        System.out.println("Give me some whole number seconds");
+        System.out.println("and I will give you");
+        System.out.println("it in hours, minutes, and seconds.");
+        System.out.println("And please no commas.");
+        System.out.print("How many seconds would you like me to compute?");
+        seconds = in.nextInt();
+        
+        // converts and gives you final result
+        minute = seconds / SECONDS_PER_MINUTE;
+        hour = minute / MINUTE_PER_HOUR;
+        remainder1 = minute % MINUTE_PER_HOUR;
+        remainder2 = seconds % SECONDS_PER_MINUTE;
+        System.out.printf("%d seconds = %d hour, %d minute, %d seconds", 
+        seconds ,hour, remainder1, remainder2);
+        System.out.println("");
+        System.out.println("Thank you for choosing Gilberto's Converter,");
+        System.out.print("Have a nice day!");
+    }
+}
